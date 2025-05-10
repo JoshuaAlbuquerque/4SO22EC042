@@ -1,0 +1,5 @@
+The file `src/db.sqlite3` is an SQLite database file that is automatically created and managed by Django. It does not contain any human-readable content, as it is a binary file used for storing the database data.
+
+Therefore, the contents of the file will be:
+
+# This file is intentionally left blank.

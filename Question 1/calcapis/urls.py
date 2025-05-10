@@ -1,19 +1,10 @@
-# basic URL Configurations
-from django.urls import include, path
-# import routers
-from rest_framework import routers
+from django.urls import path, include
+from rest_framework.routers import DefaultRouter
+from .views import AverageCalculatorViewSet
 
-# import everything from views
-from .views import *
+router = DefaultRouter()
+router.register(r'average-calculator', AverageCalculatorViewSet, basename='average-calculator')
 
-# define the router
-router = routers.DefaultRouter()
-
-# define the router path and viewset to be used
-router.register(r'test', CalculatorViewSet)
-
-# specify URL Path for rest_framework
 urlpatterns = [
-	path('', include(router.urls)),
-	path('api-auth/', include('rest_framework.urls'))
+    path('', include(router.urls)),
 ]

@@ -1,9 +1,8 @@
 from django.db import models
 
-# Create your models here.
-class CalculatorTestModel(models.Model):
-    title = models.CharField(max_length=200)
-    description = models.TextField()
- 
+class NumberStorage(models.Model):
+    number = models.IntegerField(unique=True)  # Ensure uniqueness
+    created_at = models.DateTimeField(auto_now_add=True)  # Track insertion time
+
     def __str__(self):
-        return self.title
+        return str(self.number)
